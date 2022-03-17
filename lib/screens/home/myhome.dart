@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news24/core/components/my_text_style_const.dart';
 import 'package:news24/core/constants/color_Const.dart';
-import 'package:news24/core/constants/news_apis.dart';
 import 'package:news24/models/news_model.dart';
 import 'package:news24/services/news_service.dart';
 
@@ -13,7 +12,7 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  List _future = [
+  final List _future = [
     NewsService.getDate1(),
     NewsService.getDate2(),
     NewsService.getDate3(),
@@ -21,6 +20,7 @@ class _MyHomeState extends State<MyHome> {
     NewsService.getDate4(),
     NewsService.getDate5()
   ];
+  
   final List<String> _categories = [
     'Apple',
     'Tesla',
@@ -146,7 +146,9 @@ class _MyHomeState extends State<MyHome> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 10),
                                     child: SizedBox(
-                                      height: MediaQuery.of(context).size.height * 0.165,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.165,
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -176,12 +178,19 @@ class _MyHomeState extends State<MyHome> {
                                             style: MyTextStyle.nameTextStyle,
                                           ),
                                           SizedBox(
-                                            width: MediaQuery.of(context).size.width * 0.4,
-                                            child: Text(snapshot
-                                                .data!.articles![__].publishedAt
-                                                .toString(),
-                                                overflow: TextOverflow.ellipsis,
-                                                maxLines: 1, style: MyTextStyle.settingsTextStyle,),
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.4,
+                                            child: Text(
+                                              snapshot.data!.articles![__]
+                                                  .publishedAt
+                                                  .toString(),
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 1,
+                                              style:
+                                                  MyTextStyle.settingsTextStyle,
+                                            ),
                                           )
                                         ],
                                       ),
