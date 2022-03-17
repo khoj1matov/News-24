@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _myRoute.onGenerateRoute,
-      initialRoute: 'myHome',
+      initialRoute: 'notification',
     );
   }
 }

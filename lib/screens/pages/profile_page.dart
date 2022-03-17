@@ -166,7 +166,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            Expanded(
+            const Expanded(
               flex: 4,
               child: SizedBox(),
             ),

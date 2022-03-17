@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news24/screens/home/details.dart';
 import 'package:news24/screens/home/myhome.dart';
+import 'package:news24/screens/pages/notifications_page.dart';
 import 'package:news24/screens/pages/profile_page.dart';
 import 'package:news24/screens/pages/settings_page.dart';
 import 'package:news24/screens/pages/sign_in_page.dart';
@@ -26,6 +27,8 @@ class MyRoute {
         return MaterialPageRoute(builder: (_) => const ProfilePage());
       case 'details':
         return MaterialPageRoute(builder: (_) => const DetailsHome());
+      case 'notification':
+        return MaterialPageRoute(builder: (_) => const NotificationsPage());
     }
   }
 }

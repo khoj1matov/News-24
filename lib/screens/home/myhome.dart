@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:news24/core/components/my_text_style_const.dart';
 import 'package:news24/core/constants/color_Const.dart';
 import 'package:news24/models/news_model.dart';
@@ -20,7 +21,7 @@ class _MyHomeState extends State<MyHome> {
     NewsService.getDate4(),
     NewsService.getDate5()
   ];
-  
+
   final List<String> _categories = [
     'Apple',
     'Tesla',
@@ -42,11 +43,12 @@ class _MyHomeState extends State<MyHome> {
         centerTitle: true,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(left: 5, right: 15),
-            child: Icon(
-              Icons.notifications_active_outlined,
-              size: 30,
-              color: ColorConst.kPrimaryBlack,
+            padding: const EdgeInsets.only(right: 15),
+            child: InkWell(
+              child: SvgPicture.asset("assets/icons/notification.svg"),
+              onTap: () {
+                Navigator.pushNamed(context, 'notification');
+              },
             ),
           ),
         ],
@@ -120,7 +122,7 @@ class _MyHomeState extends State<MyHome> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 10),
                     child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.77,
+                      height: MediaQuery.of(context).size.height * 0.689,
                       child: ListView.builder(
                         itemBuilder: (_, __) => Column(
                           children: [
